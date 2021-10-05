@@ -96,7 +96,7 @@ Metrik yang saya gunakan pada prediksi ini adalah **Root Mean Squared Error (RMS
 *ŷ = nilai prediksi*
 
 
-Namun, sebelum menghitung nilai RMSE dalam model, kita perlu melakukan proses pelatihan dan validasi. Untuk kita perlu membuat sebuah fungsi `knn_train_test`. Fungsi ini memiliki 3 parameter, yaitu nama kolom latih, nama kolom target, nama objek Dataframe.
+Namun, sebelum menghitung nilai RMSE dalam model, kita perlu melakukan proses pelatihan dan validasi. Untuk itu kita perlu membuat sebuah fungsi `knn_train_test`. Fungsi ini memiliki 3 parameter, yaitu nama kolom latih, nama kolom target, nama objek Dataframe.
 
 Fungsi ini akan melakukan tindakan seperti memisahkan dataset menjadi data latih dan test, membuat instance kelas KNeighborsRegressor, menyesuaikan dengan model pada data latih, kemudian menjalankan prediksi pada data test, menghitung RMSE, dan mengembalikannya.
 
