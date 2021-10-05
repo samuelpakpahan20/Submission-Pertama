@@ -83,23 +83,96 @@ Dari perbandingan grafik ini, dapat disimpulkan bahwa:
 2. **Nilai k yang <= 3** harus digunakan untuk meminimalkan nilai RMSE.
 
 ## Evaluation
-Metrik yang saya gunakan pada prediksi ini adalah RMSE atau Root Mean Squared Error, yaitu cara standar untuk mengukur kesalahan suatu model dalam memprediksi data kuantitatif yang menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi. MSE didefinisikan dalam persamaan berikut
+Metrik yang saya gunakan pada prediksi ini adalah **Root Mean Squared Error (RMSE)** yang merupakan hasil dari akar kuadrat Mean Square Error (MSE). RMSE adalah cara standar untuk mengukur kesalahan suatu model dalam memprediksi data kuantitatif. RMSE didefinisikan dalam persamaan berikut
+
 ![Rumus RMSE](./images/RMSE.png)
 
-*Keterangan:
+*Keterangan:*
 
-n = jumlah dataset
+*n = jumlah dataset*
 
-yi = nilai sebenarnya
+*yi = nilai sebenarnya*
 
-ŷ = nilai prediksi*
+*ŷ = nilai prediksi*
 
 
-Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
-- Kelebihan dan kekurangan metrik
-- Bagaimana cara menerapkannya ke dalam kode.
+Namun, sebelum menghitung nilai RMSE dalam model, kita perlu melakukan proses pelatihan dan validasi. Untuk kita perlu membuat sebuah fungsi `knn_train_test`. Fungsi ini memiliki 3 parameter, yaitu nama kolom latih, nama kolom target, nama objek Dataframe.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+Fungsi ini akan melakukan tindakan seperti memisahkan dataset menjadi data latih dan test, membuat instance kelas KNeighborsRegressor, menyesuaikan dengan model pada data latih, kemudian menjalankan prediksi pada data test, menghitung RMSE, dan mengembalikannya.
+
+Berikut kode untuk fungsi tersebut:
+```
+from sklearn.metrics import mean_squared_error
+from sklearn.neighbors import KNeighborsRegressor
+
+def knn_train_test3(train_cols, target_col, df):
+    
+    np.random.seed(3)
+    
+    # Mengacak baris
+    shuffle = np.random.permutation(df.index)
+    df = df.reindex(shuffle)
+    
+    # Memisahkan dataset menjadi data latih dan test
+    train_df = df.iloc[:101]
+    test_df = df.iloc[101:]
+    
+    # Instance Kelas KNeighborsRegressor
+    knn = KNeighborsRegressor()
+    
+    # Model training
+    knn.fit(train_df[train_cols], train_df[target_col])
+    
+    # Hasil prediksi:
+    predictions = knn.predict(test_df[train_cols])
+    
+    # Menghitung RMSE:
+    rmse = (mean_squared_error(test_df[target_col], predictions))**0.5
+    
+    # Mengembalikan nilai RMSE
+    return rmse
+```
+
+Gunakan kode berikut untuk membuat daftar list setiap kolom dalam Dataframe.
+```
+list_of_cols = normalized.columns.tolist()
+
+list_of_cols.remove('price')
+
+list_of_cols
+```
+
+Selanjutnya, uji RMSE untuk setiap kolom. Tuliskan kode berikut.
+```
+rmse_dict = {}
+
+for each in list_of_cols:
+    rmse = knn_train_test(each, 'price', normalized)
+    rmse_dict[each] = rmse 
+    
+rmse_dict
+```
+
+Hasil uji RMSEnya sebagai berikut.
+
+![Hasil uji RMSE](./images/ujiRMSE.jpg)
+
+Untuk memudahkan, buat plot metrik tersebut dengan bar chart. Tuliskan kode di bawah ini:
+```
+import matplotlib.pyplot as plt
+import matplotlib.style as style
+%matplotlib inline
+
+rmse_series = pd.Series(rmse_dict)
+fig, ax = plt.subplots()
+rmse_series.sort_values(ascending = True).plot(kind='barh', ax=ax, zorder=3)
+ax.grid(zorder=0)
+```
+
+Hasilnya sebagai berikut.
+
+![Plot Metrik](./images/visualisasi.png)
+
+
 
 **---Ini adalah bagian akhir laporan---**
