@@ -40,10 +40,10 @@ Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Prepara
 ## Modeling
 ### Model Univariate dan Multivariate
 Model Univariate awalnya digunakan untuk menentukan fitur terbaik untuk pemodelan. Hal ini dilakukan dengan memvariasikan hyperparameter nilai k (n_neighbors) pada fungsi KNeighborsRegressor.
-![Visualisasi Model Univariate](/images/Univariate.png)
+![Visualisasi Model Univariate](./images/Univariate.png)
 
 Setelah fitur terbaik di dapatkan, selanjutnya dilakukan pemodelan multivariate menggunakan 3 fitur terbaik, 4 terbaik, dan 5 fitur terbaik, dengan parameter nilai k bervariasi dari 1-25.
-![Visualisasi Model Multivariate](/images/Multivariate.png)
+![Visualisasi Model Multivariate](./images/Multivariate.png)
 
 Dari perbandingan grafik ini, dapat disimpulkan bahwa:
 1. Model Predictive harus dilakukan menggunakan 4 atau 5 fitur terbaik (5 hal yang perlu diperhatikan dalam memprediksi harga pasar mobil, yaitu ['engine-size', 'width', 'horsepower', 'highway-mpg', 'curb-weight'])
