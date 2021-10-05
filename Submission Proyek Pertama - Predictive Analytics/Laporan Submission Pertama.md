@@ -79,7 +79,7 @@ Setelah fitur terbaik di dapatkan, selanjutnya dilakukan pemodelan multivariate 
 ![Visualisasi Model Multivariate](./images/Multivariate.png)
 
 Dari perbandingan grafik ini, dapat disimpulkan bahwa:
-1. **Model Predictive harus dilakukan menggunakan 4 atau 5 fitur terbaik** (5 hal yang perlu diperhatikan dalam memprediksi harga pasar mobil, yaitu ['engine-size', 'width', 'horsepower', 'highway-mpg', 'curb-weight'])
+1. **Model Predictive harus dilakukan menggunakan 4 atau 5 fitur terbaik** (5 hal yang perlu diperhatikan dalam memprediksi harga pasar mobil, yaitu `engine-size`, `width`, `horsepower`, `highway-mpg`, `curb-weight`)
 2. **Nilai k yang <= 3** harus digunakan untuk meminimalkan nilai RMSE.
 
 ## Evaluation
@@ -155,7 +155,7 @@ rmse_dict
 
 Hasil uji RMSEnya sebagai berikut.
 
-![Hasil uji RMSE](./images/ujiRMSE.jpg)
+![Hasil uji RMSE](./images/ujiRMSE.JPG)
 
 Untuk memudahkan, buat plot metrik tersebut dengan bar chart. Tuliskan kode di bawah ini:
 ```
@@ -173,6 +173,6 @@ Hasilnya sebagai berikut.
 
 ![Plot Metrik](./images/visualisasi.png)
 
-
+Dari gambar di atas, terlihat bahwa, kolom `engine-size`, `width`, `horsepower`, `highway-mpg`, `curb-weight` memiliki nilai RMSE terendah. Kolom inilah yang akan di pilih sebagai fitur terbaik untuk melakukan prediksi harga mobil.
 
 **---Ini adalah bagian akhir laporan---**
