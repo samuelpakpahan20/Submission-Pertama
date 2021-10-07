@@ -173,7 +173,14 @@ Hasilnya sebagai berikut.
 
 ![Plot Metrik](./images/visualisasi.png)
 
-Dari gambar di atas, terlihat bahwa, kolom `horsepower`, `highway-mpg`, `num-of-cylinders`, `width`, dan `compression-ratio` memiliki nilai RMSE terendah. Kolom inilah yang akan di pilih sebagai fitur terbaik untuk melakukan prediksi harga mobil. Kolom `peak-rpm` nantinya tidak lagi berada di RMSE terendah setelah di lakukan modeling dengan Multivariate.
+Dari gambar di atas, terlihat bahwa kolom `horsepower`, `peak-rpm`, `highway-mpg`,  `num-of-cylinders`, dan `compression-ratio` memiliki nilai RMSE terendah. 
+
+
+Namun pada akhirnya, saat dilakukan Modelling Multivariate Training dan memodifikasi fungsi `knn_train_test` dengan menggunakan nilai k yang berbeda, kolom `peak-rpm` tidak lagi berada di RMSE terendah. Hasil akhirnya seperti gambar berikut:
+
+![Plot Multivariate Training](./images/ujiMultivariate.png)
+
+Maka kolom (`horsepower`, `highway-mpg`, `num-of-cylinders`, `width`, dan `compression-ratio`) inilah yang akan dipilih sebagai fitur terbaik untuk melakukan prediksi harga mobil. 
 
 
 **---Ini adalah bagian akhir laporan---**
