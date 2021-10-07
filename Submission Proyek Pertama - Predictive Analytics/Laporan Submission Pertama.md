@@ -31,7 +31,9 @@ KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain deng
 Meskipun algoritma KNN mudah dipahami dan digunakan, ia memiliki kekurangan jika dihadapkan pada jumlah fitur atau dimensi yang besar. Permasalahan ini sering disebut sebagai *curse of dimensionality* (kutukan dimensi). Pada dasarnya, permasalahan ini muncul ketika jumlah sampel meningkat secara eksponensial seiring dengan jumlah dimensi (fitur) pada data. Jadi, jika menggunakan model KNN, pastikan data yang digunakan memiliki fitur yang relatif sedikit.
 
 ## Data Understanding
-Dataset yang saya gunakan adalah [Automobile Data Set](https://archive.ics.uci.edu/ml/datasets/automobile). Dataset ini terdiri dari tiga jenis entitas: 
+Dataset yang saya gunakan adalah [Automobile Dataset](https://www.kaggle.com/toramky/automobile-dataset). Untuk informasi lanjut tentang dataset ini dapat dibaca pada dokumentasi [berikut](https://archive.ics.uci.edu/ml/datasets/automobile).
+
+Dataset ini terdiri dari tiga jenis entitas: 
 1. Spesifikasi mobil dalam hal berbagai karakteristik, 
 2. Peringkat risiko asuransi yang ditetapkan, 
 3. Kerugian yang dinormalisasi dalam penggunaan dibandingkan dengan mobil lain.  
