@@ -173,6 +173,7 @@ Hasilnya sebagai berikut.
 
 ![Plot Metrik](./images/visualisasi.png)
 
-Dari gambar di atas, terlihat bahwa, kolom `engine-size`, `width`, `horsepower`, `highway-mpg`, `curb-weight` memiliki nilai RMSE terendah. Kolom inilah yang akan di pilih sebagai fitur terbaik untuk melakukan prediksi harga mobil.
+Dari gambar di atas, terlihat bahwa, kolom `horsepower`, `highway-mpg`, `num-of-cylinders`, `width`, dan `compression-ratio` memiliki nilai RMSE terendah. Kolom inilah yang akan di pilih sebagai fitur terbaik untuk melakukan prediksi harga mobil. Kolom `peak-rpm` nantinya tidak lagi berada di RMSE terendah setelah di lakukan modeling dengan Multivariate.
+
 
 **---Ini adalah bagian akhir laporan---**
