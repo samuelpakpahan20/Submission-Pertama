@@ -64,8 +64,8 @@ Variabel-variabel pada Automobile Data Set adalah sebagai berikut:
 Sebelum digunakan, Dataset melewati beberapa proses seperti berikut:
 1. Inisialisasi variabel (kolom) secara manual, karena dataset asli tidak disertakan.
 2. Mengubah kolom bertipe data `objek` menjadi `numeric`, hal ini dilakukan karena ada beberapa kolom yang bernilai numerik menggunakan tipe data `object` sehingga nilai dari kolom tidak dapat di proses. Kemudian ada beberapa kolom yang penulisan nilainya diubah ke dalam angka (numerik).
-4. Menggunakan metode `df.replace()` untuk mmengisi nilai yang hilang, lalu melakukan teknik drop terhadap data yang hilang, menggantinya dengan mean. Hal ini dilakukan agar data valid dan dapat digunakan.
-6. Melakukan teknik normalisasi pada kolom numerik sehingga semua nilai hanya bernilai dari 0 hingga 1, kecuali kolom `price`
+3. Menggunakan metode `df.replace()` untuk mengisi nilai yang hilang, lalu melakukan teknik drop terhadap data yang hilang, menggantinya dengan mean. Hal ini dilakukan agar data valid dan dapat digunakan.
+4. Melakukan teknik normalisasi pada kolom numerik sehingga semua nilai hanya bernilai dari 0 hingga 1, kecuali kolom `price`
 
 
 ## Modeling
@@ -79,8 +79,8 @@ Setelah fitur terbaik di dapatkan, selanjutnya dilakukan pemodelan multivariate 
 ![Visualisasi Model Multivariate](./images/Multivariate.png)
 
 Dari perbandingan grafik ini, dapat disimpulkan bahwa:
-1. **Model Predictive harus dilakukan menggunakan 4 atau 5 fitur terbaik** (5 hal yang perlu diperhatikan dalam memprediksi harga pasar mobil, yaitu `engine-size`, `width`, `horsepower`, `highway-mpg`, `curb-weight`)
-2. **Nilai k yang <= 3** harus digunakan untuk meminimalkan nilai RMSE.
+1. **Model Predictive harus dilakukan menggunakan 5 fitur terbaik** (5 hal yang perlu diperhatikan dalam memprediksi harga pasar mobil, yaitu `horsepower`, `highway-mpg`, `num-of-cylinders`, `width`, dan `compression-ratio`)
+2. **Nilai k 10 atau 11** harus digunakan untuk meminimalkan nilai RMSE.
 
 ## Evaluation
 Metrik yang saya gunakan pada prediksi ini adalah **Root Mean Squared Error (RMSE)** yang merupakan hasil dari akar kuadrat Mean Square Error (MSE). RMSE adalah cara standar untuk mengukur kesalahan suatu model dalam memprediksi data kuantitatif. RMSE didefinisikan dalam persamaan berikut
